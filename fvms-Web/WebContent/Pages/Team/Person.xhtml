@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+      xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich">
+
+	
+	<ui:composition template="/Pages/Template/Template.xhtml">
+
+	<ui:define name="javascript">
+	
+	<style type="text/css">
+	
+	.col1 {
+		text-align: center;
+	}
+	
+	</style>
+	</ui:define>
+      	
+	<ui:define id="content" name="content">
+		
+	<h:form id="personForm">
+	
+<rich:tabPanel id="tabs" switchType="ajax" style="width:100%;" activeItem="#{personForm.selectedTab}">
+		
+	<rich:tab id="personListTab" header="Volunteer List" style="width:100%;">
+	
+	</rich:tab>
+	
+	<rich:tab id="personTab" header="Volunteer" style="width:100%;" render="#{personForm.renderPersonTab()}">
+	
+	<h:panelGroup layout="block" style="text-align:center; font-size:large;">
+		<div class="HeadingWrapper">
+			<div class="HeadingContent">
+				Volunteer Signup
+			</div>
+		</div>
+	</h:panelGroup>
+	
+	<h:panelGrid columnClasses="col1" width="100%">
+	  <h:panelGroup layout="block">
+		<h:outputLabel value="First Name:" for="firstNameField" />
+		<h:inputText id="firstNameField" value="#{personForm.person.firstName }" style="margin-left:3px; text-align:left; width:90px;" />
+	  </h:panelGroup>
+	</h:panelGrid>
+	
+	<h:panelGrid columnClasses="col1" width="100%">
+	  <h:panelGroup layout="block">
+		<h:outputLabel value="Last Name:" for="lastNameField" />
+		<h:inputText id="lastNameField" value="#{personForm.person.lastName}" style="margin-left:3px; text-align:left; width:90px;" />
+	  </h:panelGroup>
+	</h:panelGrid>
+	
+	<h:panelGrid columnClasses="col1" width="100%">
+	  <h:panelGroup layout="block">
+		<h:outputLabel value="Cell Phone #:" for="cellPhoneField" />
+		<h:inputText id="cellPhoneField" value="#{personForm.person.cellPhoneNumber}" style="margin-left:3px; text-align:left; width:90px;" />
+	  </h:panelGroup>
+	</h:panelGrid>
+	
+	<h:panelGrid columnClasses="col1" width="100%">
+	  <h:panelGroup layout="block">
+		<h:outputLabel value="Email:" for="emailField" />
+		<h:inputText id="emailField" value="#{personForm.person.email}" style="margin-left:3px; text-align:left; width:90px;" />
+	  </h:panelGroup>
+	</h:panelGrid>
+	
+	<h:panelGrid columnClasses="col1" width="100%">
+	  <h:panelGroup layout="block">
+		<h:outputLabel value="Role:" for="roleField" />
+		<h:selectOneMenu id="roleField" value="#{personForm.person.role}">
+		   	<f:selectItem itemValue="worker" itemLabel="Worker" />
+		   	<f:selectItem itemValue="teamLeader" itemLabel="Team Leader" />
+		</h:selectOneMenu>
+	  </h:panelGroup>
+	</h:panelGrid>
+	
+	<h:panelGrid columnClasses="col1" width="100%" ajaxRendered="true" >
+	  <a4j:outputPanel id="teamLdrGroup" ajaxRendered="true">
+		<h:outputLabel value="Team Ldr:" for="teamLdrField" />
+		<h:inputText id="teamLdrField" value="#{personForm.teamLeaderName}" style="margin-left:3px; text-align:left; width:90px;" />
+	  </a4j:outputPanel>
+	</h:panelGrid>
+	
+	<h:panelGrid columnClasses="col1" width="100%" style="margin-bottom:12px">
+	  <h:panelGroup>
+		<h:commandButton id="Submit" value="Submit" action="#{personForm.submit}" />
+	    <h:commandButton id="Clear" value="Clear" action="#{rolloverForm.clear}"
+	    		onclick="return confirm('Are you sure you want to clear')" style="margin-left:10px; margin-top:10px;" />
+	  </h:panelGroup>
+	</h:panelGrid>
+	
+	<rich:panel style="width:450px;">
+	<f:facet name="header">Select A Team</f:facet>
+	
+		<h:panelGrid id="TeamLeaderPanelGrid" columns="4">
+		
+		  <h:panelGroup layout="block">
+			<h:outputLabel value="First Name Filter:" for="TLFirstNameField" />
+			<h:inputText id="TLFirstNameField" value="#{personForm.teamLeaderFirstName}" style="margin-left:3px; text-align:left; width:90px;" />
+			
+		  </h:panelGroup>
+		
+		  <h:panelGroup layout="block">
+			<h:outputLabel value="Last Name Filter:" for="TLLastNameField" />
+			<h:inputText id="TLLastNameField" value="#{personForm.teamLeaderLastName}" style="margin-left:3px; text-align:left; width:90px;">
+				<a4j:ajax event="keyup" execute="@this" listener="#{personForm.changeTeamLeaderList}" render="leaderList" />
+			</h:inputText>
+		  </h:panelGroup>
+	
+		  <h:panelGroup layout="block">
+			<h:outputLabel value="Leader List:" for="leaderList" />
+			<h:selectOneMenu id="leaderList" value="#{personForm.selectedTeamLeaderId}">
+			   	<f:selectItems value="#{personForm.teamLeaderMap}" />
+			</h:selectOneMenu>
+		  </h:panelGroup>
+		  
+		<a4j:commandButton id="AddLeaderButton" value="Add" action="#{personForm.addToTeam}" render="teamLdrGroup"/>
+	
+		</h:panelGrid>
+		
+	</rich:panel>
+	
+	</rich:tab>
+	  
+	</rich:tabPanel>
+	
+	</h:form>
+	</ui:define>
+	</ui:composition>
+      
+</html>

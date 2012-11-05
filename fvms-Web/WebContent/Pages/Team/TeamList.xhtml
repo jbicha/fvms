@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+      xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich">
+
+	
+	<ui:composition template="/Pages/Template/Template.xhtml">
+
+	<ui:define name="javascript">
+	
+	<style type="text/css">
+	
+	.col1 {
+		text-align: center;
+	}
+	
+	</style>
+	</ui:define>
+      	
+	<ui:define id="content" name="content">
+	
+	<h:form id="teamForm">
+	
+<rich:tabPanel id="tabs" switchType="server" style="width:100%;">
+	
+	<rich:tab id="teamListTab" header="Team List" style="width:100%;">
+	
+		<rich:dataTable id="teamTable" value="#{teamListForm.teamList}" var="team" 
+			rowClasses="row1, row2" rerender="teamTableDS" width="100%">
+		 
+			 <f:facet name="header">
+			 	<h:panelGroup layout="block" width="100%" style="text-align: left;">
+			 		<h:outputText  value="Team Leaders" />
+			 	</h:panelGroup>
+			 </f:facet>
+				
+			<!--  **** First Name **** -->
+			<rich:column style="text-align:center;">
+				<f:facet name="header">
+					<h:outputText value="First Name" />
+				</f:facet>
+				<h:outputText id="firstNameOutputText" value="#{team.teamLeader.firstName}" />
+			</rich:column>
+			
+			<!--  **** Last Name **** -->
+			<rich:column style="text-align:center;">
+				<f:facet name="header">
+					<h:outputText value="Last Name" />
+				</f:facet>
+				<h:outputText id="lastNameOutputText" value="#{team.teamLeader.lastName}" />
+			</rich:column>
+
+		</rich:dataTable>
+		
+	
+	</rich:tab>
+	  
+	</rich:tabPanel>
+	
+	</h:form>
+	  
+	</ui:define>
+	</ui:composition>
+      
+</html>			

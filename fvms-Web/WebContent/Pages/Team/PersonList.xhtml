@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+	  xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich">
+
+	
+	<ui:composition template="/Pages/Template/Template.xhtml">
+
+	<ui:define name="javascript">
+	
+	<style type="text/css">
+	
+	.col1 {
+		text-align: center;
+	}
+	
+	</style>
+	</ui:define>
+      	
+	<ui:define id="content" name="content">
+	
+	<h:form id="personForm">
+	 
+	<rich:tabPanel id="tabview" dynamic="true" activeIndex="#{personForm.selectedTab}">
+
+	
+	<rich:tab id="personListTab" header="Volunteer List">
+	
+		<rich:dataTable id="personTable" value="#{personForm.personList}" var="per" 
+			rowClasses="row1, row2" rerender="personTableDS" width="100%">
+		 
+			 <f:facet name="header">
+			 	<h:panelGroup layout="block" width="100%" style="text-align: center;">
+			 		<h:outputText  value="Volunteer List" />
+			 	</h:panelGroup>
+			 </f:facet>
+				
+			<!--  **** First Name **** -->
+			<rich:column style="text-align:center;">
+				<f:facet name="header">
+					<h:outputText value="First Name" />
+				</f:facet>
+				<h:commandLink id="firstNameLink" value="#{per.firstName}" action="#{personForm.updateLink(per)}"/>
+			</rich:column>
+			
+			<!--  **** Second Name **** -->
+			<rich:column style="text-align:center;">
+				<f:facet name="header">
+					<h:outputText value="Last Name" />
+				</f:facet>
+				<h:outputText id="secondNameOutputText" value="#{per.lastName}" />
+			</rich:column>
+			
+			<!--  **** Cell Phone **** -->
+			<rich:column style="text-align:center;">
+				<f:facet name="header">
+					<h:outputText value="Cell Phone" />
+				</f:facet>
+				<h:outputText id="cellPhoneOutputText" value="#{per.cellPhoneNumber}" />
+			</rich:column>
+			
+			<!--  **** Email **** -->
+			<rich:column style="text-align:center;">
+				<f:facet name="header">
+					<h:outputText value="Email" />
+				</f:facet>
+				<h:outputText id="emailOutputText" value="#{per.email}" />
+			</rich:column>
+			
+			<!--  **** Role **** -->
+			<rich:column style="text-align:center;">
+				<f:facet name="header">
+					<h:outputText value="Role" />
+				</f:facet>
+				<h:outputText id="roleOutputText" value="#{per.role}" />
+			</rich:column>
+			
+			<!--  **** Team Leader **** -->
+			<rich:column style="text-align:center;">
+				<f:facet name="header">
+					<h:outputText value="Team Leader" />
+				</f:facet>
+				<h:outputText id="leaderOutputText" value="#{per.teamLeaderName}" />
+			</rich:column>
+
+		</rich:dataTable>
+		
+		  <!--  **** Button Panel **** -->
+	  <h:panelGrid columnClasses="col1" width="100%">
+	  <h:panelGroup>
+		 <h:commandButton id="Add" value="Add" action="#{personForm.addLink}" />
+	  </h:panelGroup>
+	</h:panelGrid>	
+		
+	
+	</rich:tab>
+	
+	
+		  
+	</rich:tabPanel>
+	
+	</h:form>
+	  
+	</ui:define>
+	</ui:composition>
+      
+</html>

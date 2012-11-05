@@ -1,0 +1,86 @@
+!SESSION 2012-11-04 16:37:26.182 -----------------------------------------------
+eclipse.buildId=M20120914-1800
+java.version=1.7.0_09
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -data /home/michael/dev/eclipse-fvms-new/fvms -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2012-11-04 16:46:53.440
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2012-11-04 16:46:59.055
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2012-11-04 16:48:00.673
+!MESSAGE Module fvms published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2012-11-04 16:48:00.680
+!MESSAGE Module fvms-EJB published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2012-11-04 16:48:00.720
+!MESSAGE Module fvms-Web published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2012-11-04 16:48:08.233
+!MESSAGE Module fvms published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2012-11-04 16:48:08.241
+!MESSAGE Module fvms-EJB published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2012-11-04 16:48:08.275
+!MESSAGE Module fvms-Web published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2012-11-04 16:48:19.699
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2012-11-04 16:48:19.962
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2012-11-04 16:48:19.965
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2012-11-04 16:48:19.967
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2012-11-04 16:48:29.121
+!MESSAGE Module fvms published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2012-11-04 16:48:29.127
+!MESSAGE Module fvms-EJB published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2012-11-04 16:48:29.151
+!MESSAGE Module fvms-Web published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2012-11-04 16:49:01.968
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2012-11-04 16:49:07.486
+!MESSAGE Server Startup Succeeded
+!SESSION 2012-11-05 03:36:39.849 -----------------------------------------------
+eclipse.buildId=I20120608-1400
+java.version=1.7.0_09
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -data /home/michael/dev/eclipse-fvms-new/fvms -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2012-11-05 03:40:50.916
+!MESSAGE Module fvms published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2012-11-05 03:40:50.930
+!MESSAGE Module fvms-EJB published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2012-11-05 03:40:51.020
+!MESSAGE Module fvms-Web published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2012-11-05 03:47:30.240
+!MESSAGE Module fvms published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2012-11-05 03:47:30.246
+!MESSAGE Module fvms-EJB published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2012-11-05 03:47:30.267
+!MESSAGE Module fvms-Web published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2012-11-05 03:47:30.273
+!MESSAGE Module HttpGetServlet published without error.

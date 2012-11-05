@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="6"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_6.xsd">
+	
+  <application-name>Field Volunteer Management System</application-name>
+  
+  <initialize-in-order>true</initialize-in-order>
+   
+  <module id="myeclipse.1287530400211">
+    <ejb>fvms-EJB.jar</ejb>
+  </module>
+  
+  <module id="myeclipse.1287218059863">
+    <web>
+      <web-uri>fvms-Web.war</web-uri>
+      <context-root>/fvms</context-root>
+    </web>
+  </module>
+  
+</application>
+
