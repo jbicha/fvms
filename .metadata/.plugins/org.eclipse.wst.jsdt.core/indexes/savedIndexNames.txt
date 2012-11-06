@@ -1,7 +1,0 @@
-INDEX VERSION 1.122+/home/michael/dev/openfvms/fvms/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
-3410052108.index
-297310142.index
-2834842410.index
-2025547663.index
-1688115342.index
-207282882.index
